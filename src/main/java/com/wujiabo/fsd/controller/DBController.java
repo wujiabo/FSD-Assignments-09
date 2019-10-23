@@ -2,6 +2,7 @@ package com.wujiabo.fsd.controller;
 
 import com.wujiabo.fsd.service.DBService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +14,7 @@ public class DBController {
     private DBService dbService;
 
 
+    @CrossOrigin
     @GetMapping(value = "/dbVersion")
     public String dbVersion(){
         String version = dbService.dbVersion();
