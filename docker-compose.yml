@@ -36,7 +36,18 @@ services:
       - mysqldbserver
     links:
       - mysqldbserver
-
+  nginxserver:
+    container_name: nginxserver
+    build:
+      context: .
+      dockerfile: nginx-dockerfile
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /usr/share/nginx/html
+    depends_on:
+      - springappserver
 networks:
   net-spring-db:
     driver: bridge

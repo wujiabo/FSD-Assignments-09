@@ -1,0 +1,5 @@
+FROM nginx:1.13
+MAINTAINER xxx xx@xxxxx.com
+VOLUME /usr/share/nginx/html
+WORKDIR /usr/share/nginx/html
+COPY nginx/*.* /usr/share/nginx/html/
